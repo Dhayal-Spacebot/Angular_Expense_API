@@ -100,7 +100,7 @@ const { List, Task, User, mongoose } = require('./db/models/index');
  * GET /lists
  * Purpose : Get all lists
  */
-app.get('/lists', authenticate, (req, res) => {
+app.get('/lists', (req, res) => {
     // We want to return an array of all the lists that belong to the authenticated user 
     List.find({
         _userId: req.user_id
@@ -116,11 +116,11 @@ app.get('/lists', authenticate, (req, res) => {
  * POST /lists
  * Purpose : Create a new list
  */
-app.post('/lists', authenticate, (req, res) => {
+app.post('/lists', (req, res) => {
     let title = req.body.title;
     let newlist = new List({
         title,
-        _userId: req.user_id
+        //_userId: req.user_id
     });
     newlist.save().then((listdoc) => {
         res.send(listdoc);
@@ -322,7 +322,7 @@ let deleteTasksFromList = (_listId) => {
 
 
 /* Port to run on */
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 4005;
 app.listen(port, () => {
     console.log("Node is listening")
 });
