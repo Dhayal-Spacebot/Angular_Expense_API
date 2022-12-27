@@ -2,7 +2,7 @@
 
 const mongoose = require('mongoose');
 
-const mongopath = 'mongodb+srv://codeatgit:codeatgit3144@mongodb.c0bmd.mongodb.net/notes?retryWrites=true&w=majority';
+const mongopath = 'mongodb+srv://dhayal:Fh0Uo9lb5r39CDWL@cluster0.qa5zu2f.mongodb.net/?retryWrites=true&w=majority';
 
 mongoose.Promise = global.Promise;
 
